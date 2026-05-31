@@ -122,7 +122,10 @@ for channel_id in CHANNEL_IDS:
         print("ERROR:", channel_id, e)
 
 payload = {
-    "last_updated": datetime.now().strftime("%H:%M"),
+   # "last_updated": datetime.now().strftime("%H:%M"),
+    "last_updated": datetime.now(
+         ZoneInfo("America/Vancouver")
+         ).strftime("%H:%M"),
     "page1": videos[:24],
     "page2": videos[24:48]
 }
