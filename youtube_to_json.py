@@ -103,7 +103,8 @@ for channel_id in CHANNEL_IDS:
             dt = dt.astimezone(
             ZoneInfo("America/Vancouver"))
          
-            published = dt.strftime("%b %d %H:%M")
+            # published = dt.strftime("%b %d %H:%M")
+            published = dt.strftime("%b %d %H:%M %Z")
 
         except Exception:
             pass
