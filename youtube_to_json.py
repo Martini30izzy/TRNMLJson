@@ -2,6 +2,7 @@ import json
 import requests
 import feedparser
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 # -----------------------------------
 # CHANNEL IDS
@@ -99,6 +100,9 @@ for channel_id in CHANNEL_IDS:
             published.replace("Z", "+00:00")
             )
 
+            dt = dt.astimezone(
+            ZoneInfo("America/Vancouver"))
+         
             published = dt.strftime("%b %d %H:%M")
 
         except Exception:
